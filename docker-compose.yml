@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  backend:
+    build:
+      context: .
+    expose:
+      - 3000
+      - 443
+    ports:
+      - 3000:3000
+      - 443:443
+    restart: always
+    volumes:
+      - sqlite-data:/opt/app/data
+
+volumes:
+  sqlite-data:
